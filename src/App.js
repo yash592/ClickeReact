@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Jumbotron from "./components/jumbo";
 import Navbar from "./components/nav";
+import Social from "./components/social";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           
           <Navbar />
           <Jumbotron />
+          <Social />
           
         </div>
       </div>
