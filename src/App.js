@@ -5,6 +5,7 @@ import Jumbotron from "./components/jumbo";
 import Navbar from "./components/nav";
 import Social from "./components/social";
 import characters from "./characters.json";
+import CharacterCard from "./components/CharacterCard";
 
 class App extends Component {
 
@@ -21,6 +22,19 @@ class App extends Component {
           
           <Navbar />
           <Jumbotron />
+          
+            
+            {this.state.characters.map(character => (
+
+              <CharacterCard
+                id={character.id}
+                key={character.id}
+                name={character.name}
+                image={character.image}
+                />
+
+              ))}
+            
           <Social />
           
         </div>
