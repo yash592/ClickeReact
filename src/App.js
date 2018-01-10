@@ -20,9 +20,11 @@ class App extends Component {
     
   };
 
-  
+  // =================================================
 
+  // Shuffling the characters array
 
+  // =================================================
 
 
   shuffleChars = (arr) => {
@@ -36,14 +38,18 @@ class App extends Component {
       arr[index] = temp;
     }
 
-    return arr;
-   
+    return arr;   
     
     // this.state.shuffledArr.push(this.state.characters);
-    // console.log(this.state.shuffledArr);
-    
+    // console.log(this.state.shuffledArr);    
 
   };
+
+  // =================================================
+
+  // Shuffling the characters array
+
+  // =================================================
 
   
 
