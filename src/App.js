@@ -68,8 +68,6 @@ class App extends Component {
             
             {this.state.characters.map(character => (
 
-
-
               <CharacterCard
                 id={character.id}
                 key={character.id}
@@ -78,7 +76,7 @@ class App extends Component {
                 />
 
               ))}
-            
+                          
           <Social />
           
         </div>
