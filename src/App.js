@@ -7,54 +7,62 @@ import Social from "./components/social";
 import characters from "./characters.json";
 import CharacterCard from "./components/CharacterCard";
 
-let array = [1, 2, 3];
-console.log(array)
+// let array = [1, 2, 3];
+// console.log(array)
 class App extends Component {
 
   // Seting the characters array 
   state = {
     characters,
-    score: "",
-    topScore: "",
-    clicked: false
+    score: 0,
+    topScore: 0,
+    clicked: false  
+    
   };
 
-
-
-  componentDidMount = () => {
-    this.shuffleChars();
-
-  }
+  
 
 
 
-  shuffleChars = () => {
 
-    var counter = array.length, temp, index;
+  shuffleChars = (arr) => {
+
+    var counter = arr.length, temp, index;
     while (counter> 0) {
       index = Math.floor(Math.random()*counter);
       counter--;
-      temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
+      temp = arr[counter];
+      arr[counter] = arr[index];
+      arr[index] = temp;
     }
 
-    console.log(array);
-    console.log(this.state.characters);
+    return arr;
+   
+    
+    // this.state.shuffledArr.push(this.state.characters);
+    // console.log(this.state.shuffledArr);
+    
 
-  }
+  };
+
+  
+
+
+
+
 
 
   render() {
+    this.shuffleChars(this.state.characters)
     return (
       <div className="App">
-        <div className="container">
-          
+        <div className="container">          
           <Navbar />
-          <Jumbotron />
-          
+          <Jumbotron />         
             
             {this.state.characters.map(character => (
+
+
 
               <CharacterCard
                 id={character.id}

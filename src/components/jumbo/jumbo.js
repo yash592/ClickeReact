@@ -25,9 +25,9 @@ const styles = {
 };
 
 const Jumbotron = () => (
-	<div class="jumbotron" style={styles.jumbo}>
-	    <h1 class="text-center" style={styles.h}>Clicking Bad</h1>
-	    <p class="text-center" style={styles.p}>Click on any Breaking Bad character and get points. If you click a character twice, you clicked bad!</p>
+	<div className="jumbotron" style={styles.jumbo}>
+	    <h1 className="text-center" style={styles.h}>Clicking Bad</h1>
+	    <p className="text-center" style={styles.p}>Click on any Breaking Bad character and get points. If you click a character twice, you clicked bad!</p>
 	    <p></p>
 	</div>
 	);
