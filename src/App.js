@@ -4,6 +4,7 @@ import './App.css';
 import Jumbotron from "./components/jumbo";
 import Navbar from "./components/nav";
 import Social from "./components/social";
+import Wrapper from "./components/Wrapper";
 import characters from "./characters.json";
 import CharacterCard from "./components/CharacterCard";
 
@@ -53,10 +54,37 @@ class App extends Component {
 
   increaseScore = () => {
 
-    this.state.score = this.state.score + 1;
+    this.state.score += 1
     console.log(this.state.score);
 
   }
+
+  // =================================================
+
+  // Decrease score function
+
+  // =================================================
+
+  decreaseScore = () => {
+
+    this.state.score -= 1
+    console.log(this.state.score);
+
+  }
+
+  // =================================================
+
+  // startGame
+
+  // =================================================
+
+  startGame = () => {
+
+    this.state.clicked = true;
+    console.log(this.state.clicked);
+  }
+
+
 
   
 
@@ -68,10 +96,12 @@ class App extends Component {
   render() {
     this.shuffleChars(this.state.characters)
     return (
+    
       <div className="App">
         <div className="container">          
           <Navbar />
-          <Jumbotron />         
+          <Jumbotron /> 
+          <Wrapper>        
             
             {this.state.characters.map(character => (
 
@@ -81,14 +111,18 @@ class App extends Component {
                 name={character.name}
                 image={character.image}
                 scoreUp={this.increaseScore}
+                scoreDown={this.decreaseScore}
+                startDaGame={this.startGame}
                 />
 
               ))}
+            </Wrapper>
                           
           <Social />
           
         </div>
       </div>
+    
     );
   }
 }
