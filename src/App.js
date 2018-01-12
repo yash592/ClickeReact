@@ -16,10 +16,10 @@ class App extends Component {
   state = {
     characters,
     score: 0,
-    topScore: 0,
-    clicked: false  
+    topScore: 0     
     
   };
+
 
   // =================================================
 
@@ -28,23 +28,13 @@ class App extends Component {
   // =================================================
 
 
-  shuffleChars = (arr) => {
-
-    var counter = arr.length, temp, index;
-    while (counter> 0) {
-      index = Math.floor(Math.random()*counter);
-      counter--;
-      temp = arr[counter];
-      arr[counter] = arr[index];
-      arr[index] = temp;
-    }
-
-    return arr;   
-    
-    
-    // console.log(this.state.shuffledArr);    
-
-  };
+ shuffleChars = () => {
+   
+   const characters = this.state.characters.map(a =>
+     [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
+ 
+ this.setState({ characters });
+ };
 
   // =================================================
 
@@ -52,25 +42,31 @@ class App extends Component {
 
   // =================================================
 
-  increaseScore = () => {
+  increaseScore = (id) => {
+     
+      if (characters[id].clicked === true){
+        // this.setState({ count: this.state.count + 1 });
+        this.setState({ score: this.state.score + 1 });
+        console.log(this.state.score)
+       characters[id].clicked === false
+      }
+      else if (characters[id].clicked === false){
+        console.log(characters[id].clicked)
+        // this.setState({ count: this.state.count + 1 });
+        this.setState({ score: this.state.score + 1 });
+        console.log(this.state.score)
+      }
+      else if(this.state.score === 10) {
+      this.setState({
+        characters,
+        score: 0,
+        topScore: 0 
+      })
+      }
+    };
 
-    this.state.score += 1
-    console.log(this.state.score);
 
-  }
-
-  // =================================================
-
-  // Decrease score function
-
-  // =================================================
-
-  decreaseScore = () => {
-
-    this.state.score -= 1
-    console.log(this.state.score);
-
-  }
+  
 
   // =================================================
 
@@ -78,11 +74,7 @@ class App extends Component {
 
   // =================================================
 
-  startGame = () => {
-
-    this.state.clicked = true;
-    console.log(this.state.clicked);
-  }
+  
 
 
 
@@ -94,12 +86,15 @@ class App extends Component {
 
 
   render() {
-    this.shuffleChars(this.state.characters)
+    // this.shuffleChars(this.state.characters)
     return (
     
       <div className="App">
-        <div className="container">          
-          <Navbar />
+        
+          <Navbar
+          score={this.state.score}
+           />
+
           <Jumbotron /> 
           <Wrapper>        
             
@@ -111,7 +106,9 @@ class App extends Component {
                 name={character.name}
                 image={character.image}
                 scoreUp={this.increaseScore}
-                scoreDown={this.decreaseScore}
+                shuffleCharacters={this.shuffleChars}
+
+                
                 startDaGame={this.startGame}
                 />
 
@@ -120,7 +117,7 @@ class App extends Component {
                           
           <Social />
           
-        </div>
+        
       </div>
     
     );

@@ -2,63 +2,75 @@
 	{
 		"id": 1,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/e/e7/BB-S5B-Walt-590.jpg",
-		"name": "Walt"
+		"name": "Walt",
+		"clicked": true 
 
 	},
 	{
 		"id": 2,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/d/d3/Skylar_S5b.jpg",
-		"name": "Hoe"
+		"name": "Hoe",
+		"clicked": true 
 	},
 	{
 		"id": 3,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/0/0c/JesseS5B.jpg",
-		"name": "Jesse"
+		"name": "Jesse",
+		"clicked": true 
 	},
 	{
 		"id": 4,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/7/7b/Hank_S5b.jpg",
-		"name": "Hank"
+		"name": "Hank",
+		"clicked": true 
 	},
 	{
 		"id": 5,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/b/b7/Marie_S5b.jpg",
-		"name": "Retard"
+		"name": "Retard",
+		"clicked": true 
 	},
 	{
 		"id": 6,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/4/41/WaltJr_S5b.jpg",
-		"name": "WaltJr"
+		"name": "WaltJr",
+		"clicked": true 
 	},
 	{
 		"id": 7,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/b/be/Season_4_-_Gus.jpg",
-		"name": "Gus"
+		"name": "Gus",
+		"clicked": true 
 	},
 	{
 		"id": 8,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/a/a4/Saul_S5b.jpg",
-		"name": "Saul"
+		"name": "Saul",
+		"clicked": true 
 	},
 	{
 		"id": 9,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/8/8b/MikeS5.jpg",
-		"name": "Mike"
+		"name": "Mike",
+		"clicked": true 
 	},
 	{
 		"id": 10,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/7/78/Lydia_S5b.jpg",
-		"name": "Lydia"
+		"name": "Lydia",
+		"clicked": true 
 	},
 	{
 		"id": 11,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/f/f5/Todd_S5b.jpg",
-		"name": "Todd"
+		"name": "Todd",
+		"clicked": true 
 	},
 	{
 		"id": 12,
 		"image": "https://vignette.wikia.nocookie.net/breakingbad/images/a/a7/Tuco_BCS.jpg",
-		"name": "Tuco"
+		"name": "Tuco",
+		"clicked": true 
 	}
 
 ]

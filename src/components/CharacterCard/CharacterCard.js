@@ -4,7 +4,7 @@ import "./CharacterCard.css";
 const CharacterCard = props => (
   <div className="card">
     <div className="img-container">
-      <img onClick = {() => props.startDaGame()} alt={props.name} src={props.image} />
+      <img onClick = {() => {props.scoreUp(props.id); props.shuffleCharacters()}} alt={props.name} src={props.image} />
     </div>
     
   </div>
