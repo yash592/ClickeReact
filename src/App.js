@@ -40,16 +40,23 @@ class App extends Component {
 
     return arr;   
     
-    // this.state.shuffledArr.push(this.state.characters);
+    
     // console.log(this.state.shuffledArr);    
 
   };
 
   // =================================================
 
-  // Shuffling the characters array
+  // Increase score function
 
   // =================================================
+
+  increaseScore = () => {
+
+    this.state.score = this.state.score + 1;
+    console.log(this.state.score);
+
+  }
 
   
 
@@ -73,6 +80,7 @@ class App extends Component {
                 key={character.id}
                 name={character.name}
                 image={character.image}
+                scoreUp={this.increaseScore}
                 />
 
               ))}
