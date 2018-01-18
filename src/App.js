@@ -43,17 +43,21 @@ class App extends Component {
   // =================================================
 
   increaseScore = (id) => {
+
+    characters[id].clicked === true;
+
+    console.log(characters);
      
-      if (characters[id].clicked === true){
+      if (characters[id].clicked === false){
         // this.setState({ count: this.state.count + 1 });
         this.setState({ score: this.state.score + 1 });
         console.log(this.state.score)
-       characters[id].clicked === false
+       characters[id].clicked === true
       }
-      else if (characters[id].clicked === false){
+      else if (characters[id].clicked === true){
         console.log(characters[id].clicked)
         // this.setState({ count: this.state.count + 1 });
-        this.setState({ score: this.state.score + 1 });
+        this.setState({ score: this.state.score - 1 });
         console.log(this.state.score)
       }
       else if(this.state.score === 10) {
@@ -106,10 +110,8 @@ class App extends Component {
                 name={character.name}
                 image={character.image}
                 scoreUp={this.increaseScore}
-                shuffleCharacters={this.shuffleChars}
-
-                
-                startDaGame={this.startGame}
+                shuffleCharacters={this.shuffleChars}                
+              
                 />
 
               ))}
