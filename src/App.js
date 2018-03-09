@@ -12,14 +12,12 @@ import CharacterCard from "./components/CharacterCard";
 // console.log(array)
 class App extends Component {
 
-  // Seting the characters array 
+  // Seting the characters array
   state = {
-    characters,
+    characters: characters,
     score: 0,
-    topScore: 0     
-    
+    topScore: 0
   };
-
 
   // =================================================
 
@@ -28,102 +26,93 @@ class App extends Component {
   // =================================================
 
 
- shuffleChars = () => {
-   
-   const characters = this.state.characters.map(a =>
-     [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
- 
- this.setState({ characters });
- };
+  shuffleChars = characters => {
 
-  // =================================================
+    characters = this.state.characters.map(a =>
+      [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
+      this.setState({ characters });
 
-  // Increase score function
+    };
 
-  // =================================================
+    // =================================================
 
-  increaseScore = (id) => {
+    // Increase score function
 
-    characters[id].clicked === true;
+    // =================================================
 
-    console.log(characters);
-     
-      if (characters[id].clicked === false){
-        // this.setState({ count: this.state.count + 1 });
+    handleScoreIncrement = (id) => {
+
+
+      if (characters[id].clicked === false) {
+
         this.setState({ score: this.state.score + 1 });
         console.log(this.state.score)
-       characters[id].clicked === true
+        characters[id].clicked === true;
+        console.log(characters[id].clicked)
+
       }
-      else if (characters[id].clicked === true){
+
+      else if (characters[id].clicked === true) {
         console.log(characters[id].clicked)
         // this.setState({ count: this.state.count + 1 });
         this.setState({ score: this.state.score - 1 });
         console.log(this.state.score)
       }
       else if(this.state.score === 10) {
-      this.setState({
-        characters,
-        score: 0,
-        topScore: 0 
-      })
+        this.resetGame();
+
       }
     };
 
-
-  
-
-  // =================================================
-
-  // startGame
-
-  // =================================================
-
-  
+    resetGame = () => {
+      this.setState.score === 0;
+      this.setState.topScore === 0;
+    }
 
 
 
-  
+    // =================================================
+
+    // startGame
+
+    // =================================================
 
 
+    render() {
+      // this.shuffleChars(this.state.characters)
+      return (
+
+        <div className="App">
+
+        <Navbar
+        score={this.state.score}
+        />
+
+        <Jumbotron />
+        <Wrapper>
+
+        {this.state.characters.map(character => (
+
+          <CharacterCard
+          id={character.id}
+          key={character.id}
+          name={character.name}
+          image={character.image}
+          scoreUp={this.handleScoreIncrement}
+          shuffleCharacters={this.shuffleChars}
+
+          />
+
+        ))}
+        </Wrapper>
+
+        <Social />
 
 
+        </div>
 
-
-  render() {
-    // this.shuffleChars(this.state.characters)
-    return (
-    
-      <div className="App">
-        
-          <Navbar
-          score={this.state.score}
-           />
-
-          <Jumbotron /> 
-          <Wrapper>        
-            
-            {this.state.characters.map(character => (
-
-              <CharacterCard
-                id={character.id}
-                key={character.id}
-                name={character.name}
-                image={character.image}
-                scoreUp={this.increaseScore}
-                shuffleCharacters={this.shuffleChars}                
-              
-                />
-
-              ))}
-            </Wrapper>
-                          
-          <Social />
-          
-        
-      </div>
-    
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
